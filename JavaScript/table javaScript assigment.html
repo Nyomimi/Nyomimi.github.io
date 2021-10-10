@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table JavaScript</title>
+</head>
+<body>
+    <form action="" >
+        
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Khin Ma Ma" required> <br><br>
+        <label for="age">Age</label>
+        <input type="number" id="age" placeholder="25" required><br><br>
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" placeholder="09-255667803" required>
+
+    </form><br><br>
+    <button onclick="showData()">Show</button><br><br>
+    <table border="1" cellspacing="0" cellpadding="10">
+        <thead>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Phone</th>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+        <script>
+            function showData() {
+                let data=[{name:document.getElementById("name").value,age:document.getElementById("age").value,phone:document.getElementById("phone").value}]
+                console.log(data);
+                let tbody= document.querySelector("#tbody");
+                let mydata='';
+                let i= 1;
+                for (const value of data){
+                    // console.log(value.name),
+                    mydata += `<tr>
+                        <td>${i++}</td>
+                        <td>${value.name}</td>
+                        <td>${value.age}</td>
+                        <td>${value.phone}</td>`;
+
+                }
+                tbody.innerHTML = mydata;
+            }
+        </script>
+
+    </table>
+</body>
+</html>
