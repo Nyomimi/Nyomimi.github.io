@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table JS Assigment</title>
+</head>
+<body>
+   <form  onsubmit="showData(); return false;"required>
+       <input type="text" id="name" placeholder="eg:Khin Ma Ma" required><br><br>
+       <input type="number" id="age" placeholder="25" required><br><br>
+       <input type="number" id="phone" placeholder="09255550000" required><br><br>
+
+   </form>
+    <button onclick="showData()">Show</button><br><br>
+    <table border="1" cellspacing="0" cellpadding="10" id="myTable">
+    <tr>
+        <td>Name</td>
+        <td>Age</td>
+        <td>Phone</td>
+    </tr>
+    </table>
+            
+        <script>
+            function showData(){
+                var tb1 = document.getElementById("myTable");
+                var row =tb1.insertRow()
+            var cell1 =row.insertCell();
+            var cell2 = row.insertCell();
+            var cell3 =row.insertCell();
+     cell1.innerHTML=document.getElementById("name").value;
+     cell2.innerHTML=document.getElementById("age").value;
+     cell3.innerHTML=document.getElementById("phone").value;
+        }
+
+        </script>
+</body>
+</html>
