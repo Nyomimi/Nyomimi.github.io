@@ -16,24 +16,31 @@
     <button onclick="showData()">Show</button><br><br>
     <table border="1" cellspacing="0" cellpadding="10" id="myTable">
     <tr>
+        <td>No.</td>
         <td>Name</td>
         <td>Age</td>
         <td>Phone</td>
     </tr>
     </table>
+    
             
         <script>
+            let a=1;
             function showData(){
                 var tb1 = document.getElementById("myTable");
                 var row =tb1.insertRow()
+                var cell0 = row.insertCell();
             var cell1 =row.insertCell();
             var cell2 = row.insertCell();
             var cell3 =row.insertCell();
+      cell0.innerHTML=a++;      
      cell1.innerHTML=document.getElementById("name").value;
      cell2.innerHTML=document.getElementById("age").value;
      cell3.innerHTML=document.getElementById("phone").value;
+  
         }
 
         </script>
+     
 </body>
 </html>

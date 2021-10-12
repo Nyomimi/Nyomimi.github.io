@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Fomula Assigment</title>
+</head>
+<body>
+    <h1>BMI Calculator</h1>
+    <form action="">
+        <label for="weight">Weight</label>
+        <input type="number" id="weight" placeholder="Fill your weight(lbs)" required><br><br>
+        <label for="height">Height</label>
+        <input type="number" id="height" placeholder="Fill your height(inches)" required><br><br>
+        
+    </form>
+    <button onclick="show()" >Calculate</button>
+    <h1>BMI is <span id="bmi"></span></h1>
+    <span id="result"></span>
+    <script>
+        function show(){
+        let weight= document.getElementById("weight").value;
+        let height= document.getElementById("height").value;
+        let bmi1=document.getElementById("bmi");
+        let bmi = (weight/Math.pow(height,2)) *703;
+            bmi1.innerText=parseInt(bmi);
+
+    
+    if(bmi<18.5){let Underweight=document.getElementById("result");
+// console.log(Underweight);
+Underweight.innerHTML="<h1>This means you are underweight. </h1>";}else if(bmi>=18.5&&bmi<24.9){
+    let HealthWeight=document.getElementById("result");
+    // console.log(HealthWeight);
+    HealthWeight.innerHTML="<h1>This means you are healthy weight. </h1>";
+}else if(bmi>=25&&bmi<29.9){let Overweight=document.getElementById("result");
+// console.log(Overweight));
+Overweight.innerHTML="<h1>This means you are overweight. </h1>";
+}else if(bmi>30){let Obese=document.getElementById("result");
+// console.log(Obese));
+Obese.innerHTML="<h1>This means you are obese. </h1>";
+}
+    
+
+}
+
+
+       
+    </script>
+    
+    
+        
+    
+</body>
+</html>
